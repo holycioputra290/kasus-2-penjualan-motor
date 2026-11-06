@@ -12,4 +12,4 @@ Aplikasi web dashboard interaktif berbasis **Streamlit** dan **Plotly** dengan a
   4. Total Penjualan per Provinsi (Bar Chart)
 
 ## 🌐 Live Dashboard
-[Link Streamlit Cloud akan dimasukkan di sini]
+(https://kasus-2-penjualan-motor-weo7ftrknsr5yqsoaqvqpg.streamlit.app/)
