@@ -125,7 +125,7 @@ st.markdown(
 # 4. Load Data Kasus 2
 @st.cache_data
 def load_data():
-    data = pd.read_csv('dataset_penjualan_motor.csv')
+    data = pd.read_csv('DataPenjualanMotor.csv')
     data['Tanggal'] = pd.to_datetime(data['Tanggal'])
     return data.sort_values('Tanggal')
 
