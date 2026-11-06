@@ -122,11 +122,28 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# 4. Load Data Kasus 2
+# 4. Load Data Kasus 2 (Disesuaikan dengan file DataPenjualanMotor.csv)
 @st.cache_data
 def load_data():
-    data = pd.read_csv('DataPenjualanMotor.csv')
-    data['Tanggal'] = pd.to_datetime(data['Tanggal'])
+    data = pd.read_csv('DataPenjualanMotor.csv', sep=';')
+    
+    # Format Tanggal
+    data['Tanggal'] = pd.to_datetime(data['TANGGAL'], format='%d-%b-%y')
+    
+    # Mapping Nama Kolom
+    data['Provinsi'] = data['PROPINSI']
+    data['Model Motor'] = data['SERIES']
+    data['Jenis Bayar'] = data['JENIS BAYAR']
+    
+    # Cleaning Format Uang Rupiah
+    def clean_money(val):
+        if pd.isna(val): return 0
+        return int(str(val).replace('.', '').replace(',', '').strip())
+
+    data['Harga Jual (Rp)'] = data['HARGA JUAL'].apply(clean_money)
+    data['Diskon (Rp)'] = data['DISKON'].apply(clean_money)
+    data['Total Penjualan (Rp)'] = data['Harga Jual (Rp)'] - data['Diskon (Rp)']
+    
     return data.sort_values('Tanggal')
 
 df = load_data()
