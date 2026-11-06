@@ -1,6 +1,6 @@
 # 🏍️ Dashboard Penjualan Motor di Indonesia (Kasus 2)
 
-Aplikasi web dashboard interaktif berbasis **Streamlit** dan **Plotly** dengan antarmuka **Apple UI / macOS Style** untuk menganalisis data penjualan motor (`dataset_penjualan_motor.csv`).
+Aplikasi web dashboard interaktif berbasis **Streamlit** dan **Plotly** dengan antarmuka **Apple UI / macOS Style** untuk menganalisis data penjualan motor (`DataPenjualanMotor.csv`).
 
 ## 🛠️ Fitur Utama
 - **Filter Interaktif:** Filter berdasarkan Rentang Tanggal, Provinsi, Model Motor, dan Jenis Pembayaran (Tunai/Kredit).
